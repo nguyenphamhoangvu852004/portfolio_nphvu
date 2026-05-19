@@ -1,75 +1,87 @@
-import { GitHubIcon } from "@/components/icons";
-import { Button } from "@/components/ui/button";
-import { FileText } from "lucide-react";
+import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { personalDetails } from "@/data/portfolio";
 
 export function Hero() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const [avatarError, setAvatarError] = useState(false);
+
+  const fadeSlide = (delay: number) => ({
+    hidden: { opacity: 0, x: -60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] as const },
+    },
+  });
+
+  const imageAnim = {
+    hidden: { opacity: 0, x: 80 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] as const },
+    },
+  };
+
   return (
-    <section className="space-y-8">
-      <div className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-8">
-        <div className="space-y-4 flex-1">
-          <h1 className="text-4xl md:text-5xl font-light tracking-tight text-foreground">
-            Nguyen Pham Hoang Vu
-          </h1>
-          <p className="text-xl text-muted-foreground font-light">
-            {/* Backend Engineer specializing in scalable architectures and
-            distributed systems. */}
-            Passion Backend Developer from Vietnam.
-          </p>
-
-          <div className="flex flex-wrap gap-3 pt-2">
-            <Button
-              variant="outline"
-              size="sm"
-              className="h-9 gap-2 text-xs font-mono uppercase tracking-wider"
-              onClick={() =>
-                window.open(
-                  "https://github.com/nguyenphamhoangvu852004",
-                  "_blank",
-                )
-              }
-            >
-              <GitHubIcon className="w-3.5 h-3.5" />
-              GitHub
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="h-9 gap-2 text-xs font-mono uppercase tracking-wider"
-            >
-              <FileText className="w-3.5 h-3.5" />
-              Resume
-            </Button>
-          </div>
-        </div>
-
-        <div className="relative group">
-          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-border/50 group-hover:border-primary/50 transition-colors duration-500">
-            <img
-              src="/avatar.jpg"
-              alt="Nguyen Pham Hoang Vu"
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-            />
-          </div>
-          <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-background rounded-full" />
-        </div>
+    <section
+      id="home"
+      className="section container mx-auto max-width md:flex md:items-center md:justify-between"
+    >
+      <div ref={ref}>
+        <motion.h1
+          variants={fadeSlide(0.1)}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="text-2xl font-bold text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight"
+        >
+          Hi, 👋
+          <br />
+          My Name is
+          <br />
+        </motion.h1>
+        <motion.h1
+          variants={fadeSlide(0.25)}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="text-2xl font-bold text-gradient md:text-4xl xl:text-5xl xl:leading-tight"
+        >
+          {personalDetails.name}
+        </motion.h1>
+        <motion.h2
+          variants={fadeSlide(0.4)}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="text-2xl font-bold text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight"
+        >
+          {personalDetails.tagline}
+        </motion.h2>
       </div>
 
-      <div className="prose prose-invert max-w-none text-muted-foreground leading-relaxed font-light">
-        <h4 className="text-xl font-light border-b border-border/40 py-2">
-          What can I do
-        </h4>
-        <p>
-          I build robust backend systems with a focus on performance,
-          reliability, and clean code. Currently exploring high-concurrency
-          patterns and cloud-native infrastructure. Passionate about developer
-          experience and system observability.
-        </p>
-      </div>
-
-      {/* <div className="flex items-center gap-6 text-muted-foreground">
-        <a href="#" className="hover:text-foreground transition-colors"><LinkedInIcon className="w-5 h-5" /></a>
-        <a href="#" className="hover:text-foreground transition-colors"><Mail className="w-5 h-5" /></a>
-      </div> */}
+      <motion.div
+        variants={imageAnim}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        className="mt-8 flex justify-center md:mt-0 md:justify-end"
+      >
+        {avatarError ? (
+          <div
+            className="flex h-56 w-56 items-center justify-center rounded-full bg-gradient-brand text-5xl font-bold text-white shadow-2xl md:h-72 md:w-72"
+            aria-label={personalDetails.name}
+          >
+            Vu
+          </div>
+        ) : (
+          <img
+            src={personalDetails.avatar}
+            alt={personalDetails.name}
+            className="h-56 w-56 rounded-full border-4 border-dark-content/20 object-cover shadow-2xl dark:border-light-content/20 md:ml-auto md:h-72 md:w-72"
+            onError={() => setAvatarError(true)}
+          />
+        )}
+      </motion.div>
     </section>
   );
 }

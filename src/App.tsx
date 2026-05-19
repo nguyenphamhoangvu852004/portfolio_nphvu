@@ -1,19 +1,18 @@
 import { Layout } from "@/components/Layout";
-import { Experience } from "@/components/sections/Experience";
+import { About } from "@/components/sections/About";
+import { Contact } from "@/components/sections/Contact";
 import { Hero } from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects";
-import { Separator } from "@/components/ui/separator";
+import { Technologies } from "@/components/sections/Technologies";
 
 function App() {
   return (
     <Layout>
       <Hero />
-      <Separator className="opacity-20" />
-      {/* <Skills /> */}
-      <Separator className="opacity-20" />
+      <About />
+      <Technologies />
       <Projects />
-      <Separator className="opacity-20" />
-      <Experience />
+      <Contact />
     </Layout>
   );
 }
