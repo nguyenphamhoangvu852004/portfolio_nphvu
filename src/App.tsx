@@ -1,19 +1,32 @@
-import { Layout } from "@/components/Layout";
-import { About } from "@/components/sections/About";
-import { Contact } from "@/components/sections/Contact";
-import { Hero } from "@/components/sections/Hero";
-import { Projects } from "@/components/sections/Projects";
-import { Technologies } from "@/components/sections/Technologies";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { RootLayout } from "@/layouts/RootLayout";
+import { ScrollRestoration } from "@/components/ScrollRestoration";
+
+// Import new modular route pages
+import { Home } from "@/pages/Home";
+import { About } from "@/pages/About";
+import { Skills } from "@/pages/Skills";
+import { Experience } from "@/pages/Experience";
+import { Projects } from "@/pages/Projects";
+import { Contact } from "@/pages/Contact";
 
 function App() {
   return (
-    <Layout>
-      <Hero />
-      <About />
-      <Technologies />
-      <Projects />
-      <Contact />
-    </Layout>
+    <Router>
+      <ScrollRestoration />
+      <RootLayout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* Fallback redirect */}
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </RootLayout>
+    </Router>
   );
 }
 

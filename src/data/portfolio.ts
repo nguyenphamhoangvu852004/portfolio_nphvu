@@ -1,6 +1,6 @@
 export const personalDetails = {
   name: "Nguyen Pham Hoang Vu",
-  tagline: "Backend Engineer from Vietnam",
+  tagline: "Backend Engineer",
   about:
     "Strong fundamentals in software engineering with a focus on backend development. Passionate about building scalable and maintainable systems, with long-term goals of growing into a Senior Backend Engineer and eventually pursuing Solution Architecture.",
   avatar: "/avatar.jpg",
@@ -18,11 +18,12 @@ export const contactDetails = {
 };
 
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Technologies", href: "#technologies" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Skills", path: "/skills" },
+  { label: "Experience", path: "/experience" },
+  { label: "Projects", path: "/projects" },
+  { label: "Contact", path: "/contact" },
 ] as const;
 
 export const workDetails = [
