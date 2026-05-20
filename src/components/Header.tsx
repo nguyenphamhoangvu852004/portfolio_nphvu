@@ -14,7 +14,11 @@ export function Header() {
       <div className="container mx-auto max-width flex justify-between py-3 md:items-center md:py-4">
         <div className="flex w-full items-center justify-between md:w-auto">
           <a href="#home" onClick={closeMenu}>
-            <img src="/logo.svg" alt="Logo" className="h-12 w-12 md:h-14 md:w-14" />
+            <img
+              src="/icons8-backend-development-96.png"
+              alt="Logo"
+              className="h-12 w-12 md:h-14 md:w-14"
+            />
           </a>
           <button
             type="button"
