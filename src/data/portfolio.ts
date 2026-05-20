@@ -93,6 +93,7 @@ export const projectDetails = [
       // "https://images.unsplash.com/photo-1611162617474-5b21e939e966?w=800&auto=format&fit=crop&q=80",
       "https://placehold.co/600x400",
   },
+
   {
     title: "Ticket Concert Booking — TICKET4U",
     description:
@@ -103,5 +104,15 @@ export const projectDetails = [
     githubLink: "https://github.com/nguyenphamhoangvu852004",
     image:
       "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&auto=format&fit=crop&q=80",
+  },
+  {
+    title: "Apperal Store ERP (Coming Soon)",
+    description:
+      "Backend RESTful API system that serves as the central ERP core for the entire business. This is not a simple CRUD project or proof-of-concept system. The platform must be production-grade, scalable, highly reliable, and capable of handling real-world operational complexity.",
+    techstack: "TypeScript, NestJS, MySQL ,...",
+    previewLink: "#",
+    githubLink: "https://github.com/nguyenphamhoangvu852004/ApparelStoreERP",
+    image:
+      "https://images.unsplash.com/photo-1616156027751-fc9a850fdc9b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
