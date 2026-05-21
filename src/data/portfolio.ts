@@ -92,7 +92,8 @@ export const projectDetails = [
     githubLink: "https://github.com/nguyenphamhoangvu852004/lopet-be",
     image:
       // "https://images.unsplash.com/photo-1611162617474-5b21e939e966?w=800&auto=format&fit=crop&q=80",
-      "https://placehold.co/600x400",
+      // "https://placehold.co/600x400",
+      "/logoPetGram.png",
   },
 
   {
