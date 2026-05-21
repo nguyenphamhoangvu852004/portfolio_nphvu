@@ -61,7 +61,12 @@ export const techStackExperienced = [
   "Java",
   "Spring Boot",
   "MySQL",
+  "Redis",
+  "Kafka",
   "Clean Architecture",
+  "Microservices",
+  "AWS EC2 (deployment)",
+  "Unit Testing (using Jest)",
 ];
 
 export const techStackEducated = [
@@ -69,15 +74,10 @@ export const techStackEducated = [
   "C#",
   ".Net",
   "Winform",
-  "Redis",
-  "Kafka",
-  "Unit Testing (using Jest)",
   "CI/CD",
   "DDD (Domain-Driven Design)",
   "SOLID Principles",
   "Design Patterns",
-  "Microservices",
-  "AWS EC2 (deployment)",
 ];
 
 export const tools = ["Git", "GitHub", "Docker"];
