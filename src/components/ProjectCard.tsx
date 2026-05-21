@@ -36,7 +36,7 @@ export function ProjectCard({
           <span className="font-light text-content">{techstack}</span>
         </p>
         <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
-          <a
+          {/* <a
             href={previewLink}
             target="_blank"
             rel="noreferrer noopener"
@@ -44,7 +44,7 @@ export function ProjectCard({
           >
             <ExternalLink className="h-4 w-4" />
             Live Preview
-          </a>
+          </a> */}
           <a
             href={githubLink}
             target="_blank"
