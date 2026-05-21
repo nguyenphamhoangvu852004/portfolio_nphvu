@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+// import { ExternalLink } from "lucide-react";
 import { GitHubIcon } from "@/components/icons";
 
 interface ProjectCardProps {
@@ -15,7 +15,7 @@ export function ProjectCard({
   image,
   description,
   techstack,
-  previewLink,
+  // previewLink,
   githubLink,
 }: ProjectCardProps) {
   return (
