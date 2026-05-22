@@ -7,8 +7,8 @@ interface ProjectCardProps {
   image: string;
   description: string;
   techstack: string;
-  previewLink: string;
-  githubLink: string;
+  previewLink?: string;
+  githubLink?: string;
 }
 
 export function ProjectCard({

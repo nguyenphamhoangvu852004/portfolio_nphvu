@@ -136,7 +136,7 @@ export function ProjectDetail() {
               <p
                 className="text-content text-justify  text-base leading-relaxed mt-4"
                 dangerouslySetInnerHTML={{
-                  __html: project.longDescription,
+                  __html: project.longDescription || "",
                 }}
               ></p>
             </div>
@@ -147,7 +147,7 @@ export function ProjectDetail() {
                 Key Engineering Highlights
               </h2>
               <ul className="grid grid-cols-1 md:grid-cols-1 gap-4">
-                {project.features.map((feature, idx) => (
+                {project.features?.map((feature, idx) => (
                   <motion.li
                     key={idx}
                     initial={{ opacity: 0, x: -15 }}
@@ -225,7 +225,7 @@ export function ProjectDetail() {
               <div
                 className="text-justify text-base leading-relaxed space-y-4"
                 dangerouslySetInnerHTML={{
-                  __html: project.learnings,
+                  __html: project.learnings || "",
                 }}
               />
             </div>
@@ -244,7 +244,7 @@ export function ProjectDetail() {
               </h3>
 
               {/* Role */}
-              {project.mentors?.length > 0 && (
+              {project.mentors != undefined && (
                 <div>
                   <span className="block text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider mb-1">
                     Mentors
@@ -259,7 +259,7 @@ export function ProjectDetail() {
                   </span>
                 </div>
               )}
-              {project.supervisors?.length > 0 && (
+              {project.supervisors != undefined && (
                 <div>
                   <span className="block text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider mb-1">
                     Acedemic Supervisors

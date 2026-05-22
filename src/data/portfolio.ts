@@ -217,7 +217,7 @@ export const projectDetails = [
     // timeline: "October 2025 — Present",
     techstack: "TypeScript, NestJS, MySQL ,...",
     // previewLink: "#",
-    // githubLink: "https://github.com/nguyenphamhoangvu852004/ApparelStoreERP",
+    githubLink: "https://github.com/nguyenphamhoangvu852004/ApparelStoreERP",
     image:
       "https://images.unsplash.com/photo-1616156027751-fc9a850fdc9b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
