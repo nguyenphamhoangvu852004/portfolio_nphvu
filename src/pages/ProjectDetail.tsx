@@ -201,16 +201,19 @@ export function ProjectDetail() {
                   Technical Challenge & Solution
                 </h3>
               </div>
-              <div className="space-y-5">
+              <div className="space-y-8">
                 {project.challenges?.map((challenge, index) => (
-                  <div key={index} className="border-l-2 border-primary pl-4">
-                    <h4 className="font-semibold text-dark-heading dark:text-light-heading">
+                  <div key={index} className="border-l border-zinc-700 pl-5">
+                    <h4 className="text-lg font-semibold text-slate-100 tracking-tight">
                       {challenge.title}
                     </h4>
 
-                    <p className="mt-2 text-justify leading-relaxed">
-                      {challenge.content}
-                    </p>
+                    <div
+                      className="mt-3 text-[15px] leading-8 text-zinc-400 text-justify"
+                      dangerouslySetInnerHTML={{
+                        __html: challenge.content,
+                      }}
+                    />
                   </div>
                 ))}
               </div>

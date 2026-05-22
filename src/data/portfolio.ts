@@ -165,31 +165,120 @@ export const projectDetails = [
   {
     id: "ticket4u",
     title: "Ticket Concert Booking — TICKET4U",
-    tagline:
-      "Event-driven microservices architecture for high-demand concert ticket booking.",
+    tagline: "Microservices architecture for concert ticket booking workflow.",
     description:
-      "A personal project for learning and applying modern technologies across microservices and event-driven architecture.",
-    longDescription: "...",
-    // "TICKET4U is an enterprise-grade seat booking and ticketing platform designed to manage high-volume transactional spikes during popular concert flash sales. Emphasizing resilience and fault tolerance, the platform operates via a decoupled microservices setup. Each service is fully isolated with its own dedicated datastore, communicating asynchronously using event streams to maintain consistency and highly responsive purchase pipelines.",
+      "A personal project focused on exploring distributed systems, concurrency handling, and scalable backend architecture through a real-world ticket booking scenario.",
+
+    longDescription: `
+<strong>Ticket4U</strong> was a backend-focused personal project inspired by real-world ticket booking platforms such as Ticketbox and Ticketmaster. The project was built primarily for self-study and experimentation with distributed systems, microservices architecture, and high-concurrency backend workflows.
+
+</br></br>
+
+Rather than focusing only on feature implementation, I wanted to better understand the engineering challenges behind large-scale booking systems, especially problems related to concurrent seat reservations, transactional consistency, distributed communication, and temporary reservation management.
+
+</br></br>
+
+One of the most technically challenging parts of the project was designing a reliable seat booking workflow. Initially, I underestimated how difficult it would be to prevent duplicate seat reservations during concurrent purchase requests. Through researching and experimenting with multiple approaches, I gradually became more familiar with concepts such as pessimistic locking, optimistic locking, distributed locking, transactional boundaries, and race condition prevention.
+
+</br></br>
+
+This project also gave me the opportunity to explore asynchronous communication using Apache Kafka between microservices. While implementing event-driven workflows, I realized how important message reliability, eventual consistency, retry mechanisms, and failure handling are in distributed systems.
+
+</br></br>
+
+In addition, I experimented with Redis caching strategies to reduce unnecessary database access and improve response performance across multiple services. Although the system was still relatively small compared to production-scale architectures, it significantly expanded my understanding of scalability, maintainability, and backend system design.
+
+</br></br>
+
+One important realization from this project was that building distributed systems involves much more than simply splitting services apart. Service boundaries, inter-service communication, data consistency, observability, and deployment complexity all introduced challenges that I had never encountered in traditional monolithic applications.
+
+</br></br>
+
+Beyond technical implementation, Ticket4U strengthened my problem-solving mindset and encouraged me to think more critically about engineering <strong>trade-offs</strong>, system reliability, and long-term maintainability. It also motivated me to continue learning more deeply about distributed architecture, event-driven systems, and high-availability backend engineering.
+`,
+
     features: [
-      "...",
-      // "Modular microservices using Java Spring Boot (Booking), NestJS (Payments), and Go/Gin (Concerts/Inventory).",
-      // "Asynchronous messaging orchestration powered by Apache Kafka for reliable, transaction-safe booking streams.",
-      // "Distributed locks with Redisson to prevent duplicate seat assignments during sub-millisecond checkout spikes.",
-      // "Integrated search engine featuring composite index lookups for immediate event catalog exploration.",
-      // "Comprehensive test coverage including Unit, Integration, and Mock-API integration tests.",
+      "Designed modular microservices using Java Spring Boot (Order Service), NestJS (Authentication & User Management), and Go/Gin (Concert Ticket Management).",
+
+      "Implemented asynchronous event-driven communication using Apache Kafka between distributed services.",
+
+      "Applied Redis caching strategies to improve performance and reduce repetitive database queries across multiple services.",
+
+      "Explored concurrency control techniques for seat reservation workflows, including transactional consistency and distributed locking concepts.",
+
+      "Designed scalable RESTful APIs with clear service boundaries and independent business responsibilities.",
+
+      "Containerized services using Docker to simplify development and deployment workflows.",
+
+      "Learned how distributed systems introduce challenges related to eventual consistency, inter-service communication, and fault tolerance.",
     ],
-    // challenges:
-    //   "Preventing double-booking of exact seats during flash sales under high concurrent purchase requests. Using database table/row locks caused catastrophic query bottlenecks and transaction timeouts. The solution was designing a robust distributed lock system using Redis. Requests must acquire a transient TTL-backed seat lock token prior to transaction processing, successfully isolating concurrent seat captures at scale with zero overhead.",
-    learnings:
-      // "Deepened technical experience in Kafka event-stream orchestration, distributed transaction management (Saga pattern), lock synchronization principles, and containerized microservice deployment structures.",
-      "...",
+
+    challenges: [
+      {
+        title: "Consistency Boundaries Context",
+        content: `Im meaning to <mark>DDD</mark> (Domain-Driven Design). The point of DDD is to model the domain as a set of entities and their relationships, and to enforce business rules and invariants at the boundaries of these entities. However, I realized that I did not apply DDD consistently across the system, especially within the concert ticket service. This inconsistency occasionally caused unclear domain boundaries, confusing business logic organization, and misunderstandings during implementation. It became an important lesson for me regarding the importance of domain modeling and architectural consistency in large-scale backend systems.`,
+      },
+      {
+        title: "Concurrency & Overselling Product in Stock ",
+        content: `One of the biggest challenges was preventing the overselling problem during high-concurrency ticket purchases. This problem introduced me to transactional isolation, pessimistic locking, optimistic locking, and distributed locking strategies. <mark>Trade-offs</mark> between Monolithic and Microservices architectures also became apparent.`,
+      },
+
+      {
+        title: "Microservices Communication Complexity",
+        content: `Separating the system into multiple services significantly increased architectural complexity. I had to think more carefully about service boundaries, asynchronous communication, message reliability, and eventual between distributed services.`,
+      },
+
+      {
+        title: "Distributed System Thinking",
+        content: `This project changed the way I think about backend systems. I realized that scalability is not only about performance, but also about maintainability, observability, fault tolerance, and operational complexity.`,
+      },
+
+      // {
+      //   title: "Areas I Still Need to Improve",
+      //   content: `Although the project helped me explore many advanced backend concepts, I still lacked practical experience in production-grade distributed systems, monitoring, CI/CD pipelines, advanced testing strategies, and large-scale infrastructure management.`,
+      // },
+    ],
+
+    learnings: `
+<p>
+  Through this project, I gained deeper exposure to distributed systems concepts such as asynchronous messaging, transactional consistency, concurrency control, and microservices architechture .
+</p>
+
+</br>
+
+<p>
+  I also became more familiar with Apache Kafka, Redis caching strategies, Docker-based service containerization, and the architectural trade-offs between monolithic and distributed systems.
+</p>
+
+</br>
+
+<p>
+  Beyond technical knowledge, this project significantly improved my problem-solving mindset and taught me how to approach backend engineering problems from a scalability and reliability perspective rather than focusing only on feature implementation.
+</p>
+
+</br>
+
+<p>
+  At the same time, I realized that I still lacked practical experience in several important areas, including production-grade distributed systems, monitoring and observability, CI/CD pipelines, advanced testing strategies, and large-scale infrastructure management. This awareness motivated me to continue learning more deeply about scalable backend engineering and system reliability.
+</p>
+
+</br>
+
+<p>
+  I strongly believe that this project became an important milestone in my backend engineering journey and significantly broadened the way I think about modern backend architectures.
+</p>
+`,
+
     role: "Backend Engineer",
     timeline: "July 2025 — Present",
+
     techstack:
-      "TypeScript, NestJS, Go, Gin, Java, Spring Boot, MySQL, Redis, Kafka",
+      "TypeScript, NestJS, Go, Gin, Java, Spring Boot, MySQL, Redis, Kafka, Docker",
+
     previewLink: "#",
+
     githubLink: "https://github.com/nguyenphamhoangvu852004/ticket4u",
+
     image:
       "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&auto=format&fit=crop&q=80",
   },
