@@ -60,7 +60,7 @@ export function WorkCard({
       </div>
 
       {description ? (
-        <p className="pt-4 text-sm font-light leading-relaxed text-content lg:max-w-3xl">
+        <p className="pt-4 text-sm text-justify font-light leading-relaxed text-content lg:max-w-3xl">
           {description}
         </p>
       ) : null}

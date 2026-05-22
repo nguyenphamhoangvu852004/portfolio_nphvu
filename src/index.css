@@ -1,7 +1,30 @@
+/* Existing Tailwind imports and base styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom utility classes */
+@layer utilities {
+  /* Glassmorphism effect for cards and panels */
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg;
+  }
+
+  /* Enhanced gradient button with subtle scale on hover */
+  .btn-primary {
+    @apply bg-gradient-brand text-white font-medium py-2 px-6 rounded-lg shadow-md transition-transform duration-200 ease-out;
+  }
+  .btn-primary:hover {
+    @apply scale-105;
+  }
+
+  /* Hover lift effect for cards */
+  .card-hover {
+    @apply transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-xl;
+  }
+}
+
+/* Existing custom layers */
 @layer base {
   :root {
     --background: 0 0% 100%;

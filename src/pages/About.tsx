@@ -22,10 +22,10 @@ export function About() {
 
           <div className="grid grid-cols-1 gap-10 py-8 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-6">
-              <p className="text-sm font-light leading-relaxed text-content md:text-base">
+              <p className="text-justify font-light leading-relaxed text-content md:text-base">
                 {personalDetails.about}
               </p>
-              <p className="text-sm font-light leading-relaxed text-content md:text-base">
+              <p className="text-justify font-light leading-relaxed text-content md:text-base">
                 I strongly believe in writing clean, well-tested code and
                 applying robust design principles (SOLID, DRY, Clean
                 Architecture) to build highly maintainable solutions. I aim to

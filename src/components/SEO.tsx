@@ -10,7 +10,9 @@ export function SEO({ title, description }: SEOProps) {
     document.title = `${title} | Nguyen Pham Hoang Vu`;
 
     if (description) {
-      let metaDescription = document.querySelector('meta[name="description"]');
+      const metaDescription = document.querySelector(
+        'meta[name="description"]',
+      );
       if (metaDescription) {
         metaDescription.setAttribute("content", description);
       } else {

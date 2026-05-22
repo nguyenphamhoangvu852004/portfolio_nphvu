@@ -51,7 +51,7 @@ export function Projects() {
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`rounded-full px-5 py-2 text-xs font-semibold shadow-sm transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] ${
+              className={`mt-5 rounded-full px-5 py-2 text-xs font-semibold shadow-sm transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] ${
                 activeFilter === category
                   ? "bg-gradient-brand text-white shadow-md"
                   : "bg-slate-100 text-dark-heading hover:bg-slate-200 dark:bg-dark-card dark:text-light-heading dark:hover:bg-zinc-800"
@@ -65,7 +65,7 @@ export function Projects() {
         {/* Animated projects grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 gap-x-10 mt-4 md:grid-cols-2"
+          className="grid grid-cols-2 gap-6 mt-4 lg:grid-cols-3"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (

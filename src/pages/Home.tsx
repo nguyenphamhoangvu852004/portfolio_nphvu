@@ -1,5 +1,6 @@
 import { SEO } from "@/components/SEO";
 import { personalDetails } from "@/data/portfolio";
+import { quote } from "@/data/quote";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
@@ -60,14 +61,21 @@ export function Home() {
             >
               {personalDetails.name}
             </motion.h1>
-            <motion.h2
+            <motion.blockquote
               variants={fadeSlide(0.3)}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              className="text-lg font-semibold text-dark-heading/80 dark:text-light-heading/85 md:text-2xl lg:text-3xl xl:text-4xl"
+              className="relative text-xl md:text-2xl lg:text-3xl xl:text-2xl font-light italic 
+             text-dark-heading/90 dark:text-light-heading/90
+             before:content-['“'] before:absolute before:-top-4 before:-left-6 
+             before:text-8xl before:text-dark-heading/20 dark:before:text-light-heading/20 
+             before:leading-none before:font-serif
+             after:content-['”'] after:absolute after:-bottom-8 after:right-0 
+             after:text-8xl after:text-dark-heading/20 dark:after:text-light-heading/20 
+             after:leading-none after:font-serif"
             >
-              {personalDetails.tagline}
-            </motion.h2>
+              {quote}
+            </motion.blockquote>
           </div>
 
           {/* <motion.p
