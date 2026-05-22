@@ -150,7 +150,7 @@ export const projectDetails = [
     and motivated me to continuously improve as a backend engineer.
   </p>
 `,
-    role: "Sole Backend Developer (Internship)",
+    role: "Backend Engineer (Intern)",
     timeline: "April 2025 — June 2025",
     techstack: "TypeScript, ExpressJS, MySQL, Redis",
     previewLink: "#",
