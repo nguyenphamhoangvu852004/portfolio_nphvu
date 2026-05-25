@@ -23,6 +23,7 @@ export const navLinks = [
   { label: "Skills", path: "/skills" },
   { label: "Experience", path: "/experience" },
   { label: "Projects", path: "/projects" },
+  { label: "Technical", path: "/technical" },
   { label: "Contact", path: "/contact" },
 ] as const;
 

@@ -10,6 +10,7 @@ import { Experience } from "@/pages/Experience";
 import { Projects } from "@/pages/Projects";
 import { ProjectDetail } from "@/pages/ProjectDetail";
 import { Contact } from "@/pages/Contact";
+import { Technical } from "@/pages/Technical";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/technical" element={<Technical />} />
           {/* Fallback redirect */}
           <Route path="*" element={<Home />} />
         </Routes>
