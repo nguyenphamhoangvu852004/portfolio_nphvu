@@ -134,7 +134,7 @@ export function ProjectDetail() {
                 Project Overview
               </h2>
               <p
-                className="text-content text-justify  text-base leading-relaxed mt-4"
+                className="text-content  text-base leading-relaxed mt-4"
                 dangerouslySetInnerHTML={{
                   __html: project.longDescription || "",
                 }}

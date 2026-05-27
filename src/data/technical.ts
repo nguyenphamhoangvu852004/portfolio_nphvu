@@ -59,48 +59,243 @@ export const technicalDiscussions: TechDiscussion[] = [
     subtitle: "Architectural decision-making from my real experience",
     tag: "Architecture",
     tagColor: "sky",
-    context:
-      // "Many engineers default to microservices because it sounds modern and scalable. After building TICKET4U with multiple services (NestJS, Go/Gin, Spring Boot), I experienced first-hand how microservices multiply architectural complexity — especially around service communication, data consistency, and deployment orchestration. This made me re-examine the decision criteria from first principles.",
-      `Every engineer starts with a monolith at some point. I did too.
-      </br>
-      </br>
-Most of my university and academic projects were built as monolith applications, including my Capstone project. At that time, monolith architecture felt completely fine to me because the systems were still relatively simple — mostly CRUD operations with straightforward business flows.
+    context: `
+<h1>From Monolith → “Fake” Microservices → Real Engineering Lessons</h1>
 
-      </br>
-      </br>
-After graduating, I started building TICKET4U using multiple services with NestJS, Go/Gin, and Spring Boot. In my head, I thought:
+<p>
+Every engineer starts with a monolith at some point.
+</p>
 
-“Okay, this is microservices now.”
+<p>
+<b>I did too.</b>
+</p>
 
-And honestly... it worked at first 🤣
+<br/>
 
-      </br>
-      </br>
-But as the application grew, things started becoming messy. Each service had its own database access, caching layer, logging mechanism, and communication flow through REST APIs. More workflows were introduced, especially around order processing and concert management.
+<hr/>
 
-      </br>
-      </br>
-That was the moment I realized something important:
-      </br>
-<li> I didn’t actually understand the microservices mindset yet. </li>
+<h2>🏗️ The Monolith Phase</h2>
 
-<li>I was only splitting responsibilities into separate services and calling it “microservices”. Looking back, that version of myself kinda sucked — but I accept that because every engineer goes through this phase. </li>
+<p>
+Most of my university and academic projects were built as <mark>monolith applications</mark>, including my Capstone project.
+</p>
 
-      </br>
-One of my biggest mistakes was around authentication and service communication. I split the system into:
+<p>
+At that time, monolith architecture felt completely fine because the systems were still relatively simple:
+</p>
 
-      </br>
-Order Service:
-      </br>
-- Concert Ticket Service
-      </br>
-- User/Auth Service
-      </br>
-      </br>
+<ul>
+<li>CRUD operations</li>
+<li>Straightforward business flows</li>
+<li>Single database</li>
+<li>Simple deployment</li>
+</ul>
 
-But then every service started implementing its own JWT verification mechanism. Whenever Order Service needed to process a workflow, or when an organizer created a concert, authentication logic was duplicated everywhere.
+<p>
+Honestly... everything felt manageable.
+</p>
 
-At that point, I finally understood that simply splitting services does not automatically give you a good microservices architecture.`,
+<br/>
+
+<hr/>
+
+<h2>🚀 Then I Started Building TICKET4U</h2>
+
+<p>
+After graduating, I started building <b>TICKET4U</b> using:
+</p>
+
+<pre>
+- NestJS
+- Go/Gin
+- Spring Boot
+</pre>
+
+<p>
+And in my head, I thought:
+</p>
+
+<blockquote>
+<i>“Okay, this is microservices now.”</i>
+</blockquote>
+
+<p>
+And honestly...
+</p>
+
+<h3>It worked at first 🤣</h3>
+
+<br/>
+
+<hr/>
+
+<h2>⚠️ The Complexity Explosion</h2>
+
+<p>
+As the application grew, things started becoming messy.
+</p>
+
+<p>
+Each service had its own:
+</p>
+
+<ul>
+<li>Database access layer</li>
+<li>Caching mechanism</li>
+<li>Logging flow</li>
+<li>REST communication logic</li>
+<li>Error handling strategy</li>
+</ul>
+
+<p>
+And more workflows were introduced around:
+</p>
+
+<ul>
+<li><b>Order Processing</b></li>
+<li><b>Concert Management</b></li>
+<li><b>User Authentication</b></li>
+</ul>
+
+<br/>
+
+<div style="padding:16px;border-left:5px solid #f59e0b;background:#fff7ed;">
+<h3>💡 That was the moment I realized something important:</h3>
+
+<p>
+I didn’t actually understand the <b>microservices mindset</b> yet.
+</p>
+</div>
+
+<br/>
+
+<p>
+I was only:
+</p>
+
+<ul>
+<li>Splitting responsibilities into multiple services</li>
+<li>Creating more APIs</li>
+<li>Adding more repositories</li>
+<li>Running more containers</li>
+</ul>
+
+<p align="center">
+<b>...and calling it “Microservices Architecture”.</b>
+</p>
+
+<br/>
+
+<p>
+Looking back, that version of myself kinda sucked 😅
+</p>
+
+<p>
+But I accept that because:
+</p>
+
+<blockquote>
+Every engineer goes through this phase.
+</blockquote>
+
+<br/>
+
+<hr/>
+
+<h2>🔐 My Biggest Mistake: Authentication & Service Communication</h2>
+
+<p>
+I split the system into:
+</p>
+
+<pre>
+Order Service
+Concert Ticket Service
+User/Auth Service
+</pre>
+
+<p>
+Sounds clean on paper.
+</p>
+
+<p>
+But then every service started implementing its own JWT verification mechanism.
+</p>
+
+<p>
+Whenever:
+</p>
+
+<ul>
+<li>Order Service processed a workflow</li>
+<li>An organizer created a concert</li>
+<li>Services communicated internally</li>
+</ul>
+
+<p>
+The authentication logic got duplicated everywhere.
+</p>
+
+<br/>
+
+<div style="padding:18px;border-radius:10px;background:#f3f4f6;">
+<h3>🚫 That was when I finally understood:</h3>
+
+<p>
+<b>Simply splitting services does NOT automatically give you a good microservices architecture.</b>
+</p>
+</div>
+
+<br/>
+
+<hr/>
+
+<h2>🧠 What I Understand Now</h2>
+
+<p>
+Microservices are not just:
+</p>
+
+<ul>
+<li>More repositories</li>
+<li>More APIs</li>
+<li>More Docker containers</li>
+</ul>
+
+<p>
+They require:
+</p>
+
+<ul>
+<li><b>Clear domain boundaries</b></li>
+<li><b>Distributed system thinking</b></li>
+<li><b>Communication strategies</b></li>
+<li><b>Data consistency planning</b></li>
+<li><b>Operational maturity</b></li>
+</ul>
+
+<br/>
+
+<p align="center">
+<mark>
+Sometimes a well-structured monolith is far better than premature microservices.
+</mark>
+</p>
+
+<br/>
+
+<hr/>
+
+<h2>📚 Final Thought</h2>
+
+<p>
+I’m still learning this every day while building systems.
+</p>
+
+<p>
+But honestly, making these architectural mistakes early helped me understand software engineering much deeper than tutorials ever could.
+</p>
+`,
     approach: `The real question is not 'monolith or microservices?' but <mark>'what is my team's operational maturity and what problems am I actually solving?'</mark>. Microservices solve org-level problems (independent deploys, team autonomy) more than technical ones. A well-structured modular monolith can achieve most scalability goals with far less operational overhead.
       </br>
       </br>
