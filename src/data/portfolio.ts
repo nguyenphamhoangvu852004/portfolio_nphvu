@@ -2,7 +2,7 @@ export const personalDetails = {
   name: "Nguyen Pham Hoang Vu",
   // tagline: "Backend Engineer",
   about:
-    "Strong fundamentals in software engineering with a focus on backend development. Passionate about building scalable and maintainable systems, with long-term goals of growing into a Senior Backend Engineer and eventually pursuing Solution Architecture.",
+    "Strong fundamentals in backend with a focus on backend development. Passionate about building scalable, maintainable, reusable systems, with long-term goals of growing into a Senior Backend Engineer and eventually pursuing Solution Architecture.",
   avatar: "/avatar.jpg",
 };
 

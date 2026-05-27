@@ -22,15 +22,25 @@ export function About() {
 
           <div className="grid grid-cols-1 gap-10 py-8 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-6">
-              <p className="text-justify font-light leading-relaxed text-content md:text-base">
+              <p className="font-light leading-relaxed text-content md:text-base">
                 {personalDetails.about}
               </p>
-              <p className="text-justify font-light leading-relaxed text-content md:text-base">
-                I strongly believe in writing clean, well-tested code and
-                applying robust design principles (SOLID, DRY, Clean
-                Architecture) to build highly maintainable solutions. I aim to
-                continuously push technical boundaries and grow into a seasoned
-                Senior Backend Engineer and Solution Architect.
+              <p className=" font-light leading-relaxed text-content md:text-base">
+                I use TypeScript as my main programming language. I have a
+                really good foundation in Functional Programming and
+                Object-Oriented Programming. I am a big fan of Clean
+                Architecture and DDD. I also have experience with Microservices
+                and Event-Driven Architecture.
+              </p>
+
+              <p className=" font-light leading-relaxed text-content md:text-base">
+                <b>
+                  <strong>Why TypeScript?</strong>
+                </b>
+                <br />I love the OOP concepts and the strong typing in Java. But
+                I also like the flexibility of funtional programming. JavaScript
+                is a great language but It doesn't have the type strictness that
+                TypeScript has. So I decided to work with TypeScript 👍
               </p>
 
               {/* <div className="pt-4">
