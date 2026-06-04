@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 
 interface RootLayoutProps {
   children: ReactNode;
@@ -28,8 +27,6 @@ export function RootLayout({ children }: RootLayoutProps) {
           </motion.div>
         </AnimatePresence>
       </main>
-
-      <Footer />
     </div>
   );
 }

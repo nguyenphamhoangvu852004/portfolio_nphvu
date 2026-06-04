@@ -1,7 +1,7 @@
 import { SEO } from "@/components/SEO";
 import { contactDetails } from "@/data/portfolio";
 import { AnimatePresence, motion } from "framer-motion";
-import { CheckCircle2, Mail, MapPin, Phone, Send } from "lucide-react";
+import { CheckCircle2, Send } from "lucide-react";
 import React, { useState } from "react";
 
 export function Contact() {
@@ -72,9 +72,6 @@ export function Contact() {
               </h3>
 
               <div className="flex items-start gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-sm">
-                  <Mail className="h-4 w-4" />
-                </div>
                 <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-wider text-dark-heading dark:text-light-heading">
                     Email
@@ -89,9 +86,6 @@ export function Contact() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-sm">
-                  <Phone className="h-4 w-4" />
-                </div>
                 <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-wider text-dark-heading dark:text-light-heading">
                     Phone
@@ -106,9 +100,6 @@ export function Contact() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-sm">
-                  <MapPin className="h-4 w-4" />
-                </div>
                 <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-wider text-dark-heading dark:text-light-heading">
                     Location
@@ -251,7 +242,7 @@ export function Contact() {
                     ) : (
                       <>
                         <Send className="h-3.5 w-3.5" />
-                        Send Message (Feature is in progress 😊)
+                        Send Message
                       </>
                     )}
                   </button>
@@ -269,12 +260,7 @@ function SectionHeadingAndIntro() {
   return (
     <div className="space-y-1">
       <h2 className="text-2xl font-bold text-dark-heading dark:text-light-heading md:text-3xl lg:text-4xl xl:text-5xl xl:leading-tight">
-        Let's Work Together
       </h2>
-      <p className="text-content text-xs md:text-sm lg:text-base leading-relaxed">
-        Have an exciting project, job opportunity, or just want to chat backend
-        architecture? Shoot me a message!
-      </p>
     </div>
   );
 }

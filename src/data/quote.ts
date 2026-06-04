@@ -1,1 +1,1 @@
-export const quote = "The moment your past self still satisfies you, growth has already slowed."
+export const quote = `"The moment your past self still satisfies you, growth has already slowed"`;

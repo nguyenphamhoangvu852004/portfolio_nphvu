@@ -20,10 +20,8 @@ export const contactDetails = {
 export const navLinks = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
-  { label: "Skills", path: "/skills" },
   { label: "Experience", path: "/experience" },
   { label: "Projects", path: "/projects" },
-  { label: "Technical", path: "/technical" },
   { label: "Contact", path: "/contact" },
 ] as const;
 

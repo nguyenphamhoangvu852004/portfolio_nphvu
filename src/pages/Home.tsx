@@ -3,8 +3,6 @@ import { personalDetails } from "@/data/portfolio";
 import { quote } from "@/data/quote";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-
 export function Home() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -44,20 +42,10 @@ export function Home() {
         <div ref={ref} className="flex-1 space-y-4 lg:space-y-6">
           <div className="space-y-1.5 lg:space-y-2">
             <motion.h1
-              variants={fadeSlide(0.1)}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              className="text-2xl font-bold text-dark-heading dark:text-light-heading md:text-4xl lg:text-5xl xl:text-6xl xl:leading-tight"
-            >
-              Hi, 👋
-              <br />
-              My Name is
-            </motion.h1>
-            <motion.h1
               variants={fadeSlide(0.2)}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              className="text-2xl font-bold text-gradient md:text-4xl lg:text-5xl xl:text-6xl xl:leading-tight py-1"
+              className="text font-bold text-gradient whitespace-nowrap md:text-4xl lg:text-5xl xl:text-6xl xl:leading-tight py-1"
             >
               {personalDetails.name}
             </motion.h1>
@@ -65,47 +53,11 @@ export function Home() {
               variants={fadeSlide(0.3)}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              className="relative text-xl md:text-2xl lg:text-3xl xl:text-2xl font-light italic 
-             text-dark-heading/90 dark:text-light-heading/90
-             before:content-['“'] before:absolute before:-top-4 before:-left-6 
-             before:text-8xl before:text-dark-heading/20 dark:before:text-light-heading/20 
-             before:leading-none before:font-serif
-             after:content-['”'] after:absolute after:-bottom-8 after:right-0 
-             after:text-8xl after:text-dark-heading/20 dark:after:text-light-heading/20 
-             after:leading-none after:font-serif"
+              className="italic"
             >
               {quote}
             </motion.blockquote>
           </div>
-
-          {/* <motion.p
-            variants={fadeSlide(0.4)}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="text-content max-w-lg text-xs md:text-sm lg:text-base leading-relaxed"
-          >
-            I specialize in crafting high-performance RESTful APIs, microservices, and clean architecture. I design and implement robust systems that manage operational complexity gracefully.
-          </motion.p> */}
-
-          <motion.div
-            variants={fadeSlide(0.5)}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="flex flex-wrap gap-4 pt-1"
-          >
-            <Link
-              to="/projects"
-              className="rounded-lg bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white shadow-lg hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
-            >
-              View Projects
-            </Link>
-            <Link
-              to="/contact"
-              className="rounded-lg border border-dark-heading px-5 py-2.5 text-sm font-semibold text-dark-heading hover:bg-black/5 dark:border-white dark:text-white dark:hover:bg-white/10 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
-            >
-              Get In Touch
-            </Link>
-          </motion.div>
         </div>
 
         <motion.div
